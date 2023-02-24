@@ -9,11 +9,12 @@ line::
 If you used the ``pelican-quickstart`` command, your primary settings file will
 be named ``pelicanconf.py`` by default.
 
-You can also specify extra settings via ``-e`` / ``--extra-settings`` option
-flags, which will override default settings as well as any defined within
-settings files::
+You can also specify settings via ``-e`` / ``--extra-settings`` option
+flags. It will override default settings as well as any defined within the
+setting file. Note that values must follow JSON notation::
 
-    pelican content -e DELETE_OUTPUT_DIRECTORY=true
+    pelican content -e SITENAME='"A site"' READERS='{"html": null}' CACHE_CONTENT=true
+
 
 .. note::
 
@@ -348,6 +349,11 @@ Basic settings
 .. data:: CHECK_MODIFIED_METHOD = 'mtime'
 
    Controls how files are checked for modifications.
+
+   - If set to ``'mtime'``, the modification time of the file is
+     checked.
+   - If set to a name of a function provided by the ``hashlib``
+     module, e.g. ``'md5'``, the file hash is checked.
 
 .. data:: LOAD_CONTENT_CACHE = False
 

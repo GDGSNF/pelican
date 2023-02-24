@@ -1,11 +1,13 @@
 Filing issues
 =============
 
-* Before you file an issue, try `asking for help`_ first.
-* If determined to file an issue, first check for `existing issues`_, including
-  closed issues.
+* Before you submit a new issue, try `asking for help`_ first.
+* If determined to create a new issue, first search `Pelican Discussions`_
+  and `existing issues`_ (open and closed) to see if your question has already
+  been answered previously.
 
 .. _`asking for help`: `How to get help`_
+.. _`Pelican Discussions`: https://github.com/getpelican/pelican/discussions
 .. _`existing issues`: https://github.com/getpelican/pelican/issues
 
 How to get help
@@ -26,15 +28,20 @@ Before you ask for help, please make sure you do the following:
 * latest releases of libraries used by Pelican
 * no plugins or only those related to the issue
 
-**NOTE:** The most common sources of problems are anomalies in (1) themes,
-(2) settings files, and (3) ``make``/``invoke`` automation wrappers. If you can't
-reproduce your problem when using the following steps to generate your site,
-then the problem is almost certainly with your chosen theme and/or settings
-file (and not Pelican itself)::
+**NOTE:** The most common sources of problems are anomalies in (1) themes, (2)
+plugins, (3) settings files, and (4) ``make``/``invoke`` automation wrappers.
+If you can't reproduce your problem when using the following steps to generate
+your site, then the problem is almost certainly with one of the above-listed
+elements (and not Pelican itself)::
 
     cd ~/projects/your-site
     git clone https://github.com/getpelican/pelican ~/projects/pelican
     pelican content -s ~/projects/pelican/samples/pelican.conf.py -t ~/projects/pelican/pelican/themes/notmyidea
+
+If you can generate your site without problems using the steps above, then your
+problem is unlikely to be caused by Pelican itself, and therefore please
+consider reaching out to the maintainers of the plugins/theme you are using
+instead of raising the topic with the Pelican core community.
 
 If despite the above efforts you still cannot resolve your problem, be sure to
 include in your inquiry the following information, preferably in the form of
@@ -59,26 +66,10 @@ publicly-accessible location:
   the ``--debug`` flag: ``pelican --debug content [...]``)
 
 .. _documentation: https://docs.getpelican.com/
-.. _`paste service`: https://dpaste.de/
+.. _`paste service`: https://dpaste.com
 
-Once the above preparation is ready, you can contact people willing to help via
-(preferably) the ``#pelican`` IRC channel or send a message to ``authors at getpelican dot com``.
-Remember to include all the information you prepared.
-
-The #pelican IRC channel
-------------------------
-
-* Because of differing time zones, you may not get an immediate response to your
-  question, but please be patient and stay logged into IRC — someone will almost
-  always respond if you wait long enough (it may take a few hours).
-* If you don't have an IRC client handy, use the webchat_.
-* You can direct your IRC client to the channel using this `IRC link`_ or you
-  can manually join the ``#pelican`` IRC channel on the `freenode IRC network`_.
-
-.. _webchat: https://kiwiirc.com/client/irc.freenode.net/?#pelican
-.. _`IRC link`: irc://irc.freenode.net/pelican
-.. _`freenode IRC network`: https://freenode.net/
-
+Once the above preparation is ready, you can post your query as a new thread in
+`Pelican Discussions`_. Remember to include all the information you prepared.
 
 Contributing code
 =================
@@ -91,7 +82,7 @@ a plugin_ — you can `ask for help`_  to make that determination.
 Using Git and GitHub
 --------------------
 
-* `Create a new git branch`_ specific to your change (as opposed to making
+* `Create a new branch`_ specific to your change (as opposed to making
   your commits in the master branch).
 * **Don't put multiple unrelated fixes/features in the same branch / pull request.**
   For example, if you're working on a new feature and find a bugfix that
@@ -148,8 +139,7 @@ Check out our `Git Tips`_ page or `ask for help`_ if you
 need assistance or have any questions about these guidelines.
 
 .. _`plugin`: https://docs.getpelican.com/en/latest/plugins.html
-.. _`#pelican IRC channel`: https://webchat.freenode.net/?channels=pelican&uio=d4
-.. _`Create a new git branch`: https://github.com/getpelican/pelican/wiki/Git-Tips#making-your-changes
+.. _`Create a new branch`: https://github.com/getpelican/pelican/wiki/Git-Tips#making-your-changes
 .. _`Squash your commits`: https://github.com/getpelican/pelican/wiki/Git-Tips#squashing-commits
 .. _`Run all the tests`: https://docs.getpelican.com/en/latest/contribute.html#running-the-test-suite
 .. _`Git Tips`: https://github.com/getpelican/pelican/wiki/Git-Tips

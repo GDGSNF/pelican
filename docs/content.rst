@@ -197,6 +197,13 @@ are copied over with the ``STATIC_PATHS`` setting of the project's
 ``images`` directory for this, but others must be added manually. In addition,
 static files that are explicitly linked to are included (see below).
 
+.. note::
+
+   In the default configuration, all files with a valid content file suffix
+   (``.html``, ``.rst``, ``.md``, ...) get processed by the article and page
+   generators *before* the static generator. This is avoided by altering the
+   ``*_EXCLUDE`` settings appropriately.
+
 Mixed content in the same directory
 -----------------------------------
 
@@ -619,8 +626,8 @@ Hidden Posts
 
 Like pages, posts can also be marked as ``hidden`` with the ``Status: hidden``
 attribute. Hidden posts will be output to ``ARTICLE_SAVE_AS`` as expected, but
-are not included by default in tag or category indexes, nor in the main
-article feed. This has the effect of creating an "unlisted" post.
+are not included by default in tag, category, and author indexes, nor in the 
+main article feed. This has the effect of creating an "unlisted" post.
 
 .. _W3C ISO 8601: https://www.w3.org/TR/NOTE-datetime
 .. _AsciiDoc: https://www.methods.co.nz/asciidoc/

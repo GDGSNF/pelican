@@ -6,7 +6,7 @@ from os.path import join, relpath
 from setuptools import find_packages, setup
 
 
-version = "4.7.1"
+version = "4.8.0"
 
 requires = ['feedgenerator >= 1.9', 'jinja2 >= 2.7', 'pygments',
             'docutils>=0.15', 'pytz >= 0a', 'blinker', 'unidecode',
@@ -24,6 +24,13 @@ entry_points = {
 
 README = open('README.rst', encoding='utf-8').read()
 CHANGELOG = open('docs/changelog.rst', encoding='utf-8').read()
+
+# Relative links in the README must be converted to absolute URL's
+# so that they render correctly on PyPI.
+README = README.replace(
+    "<CONTRIBUTING.rst>",
+    "<https://docs.getpelican.com/en/latest/contribute.html>",
+)
 
 description = '\n'.join([README, CHANGELOG])
 
@@ -66,7 +73,6 @@ setup(
         'License :: OSI Approved :: GNU Affero General Public License v3',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
